@@ -19,12 +19,14 @@ export class AppComponent {
 
   searchStarted = false;
   requests = [];
+  searchProgress = 0;
 
   activeSearch = null;
 
   constructor(private synonymsService: SynonymsService, private domainsService: DomainsService) { }
 
   startSearch(values) {
+    this.stopSearch();
     let { prefix, word, suffix } = values;
     if(!prefix) {
       prefix = '';
@@ -33,20 +35,18 @@ export class AppComponent {
       suffix = '';
     }
     this.searchStarted = true;
-    console.log('values in startSearch', values);
+    this.searchProgress = 0;
+    this.available = [];
+    this.registered = [];
+    this.errored = [];
     this.activeSearch = this.synonymsService.lookup(word).subscribe(
       synonyms => {
-        console.log('synonyms: ', synonyms);
-        const requests = [];
+        const synonymsCount = synonyms.length;
+        let lookupsCompleted = 0;
         synonyms.map((synonym) => {
-          requests.push(this.domainsService.lookup(`${prefix}${synonym}${suffix}.com`));
-        });
-        this.activeSearch = Observable.forkJoin(requests).subscribe(results => {
-          console.log('results', results);
-          this.available = [];
-          this.registered = [];
-          this.errored = [];
-          results.map((result) => {
+          this.requests.push(this.domainsService.lookup(`${prefix}${synonym}${suffix}.com`).subscribe(result => {
+            lookupsCompleted += 1;
+            this.searchProgress = Math.floor(lookupsCompleted / synonymsCount * 100);
             if(result["status"] === "registered") {
               this.registered.push(result["domain"]);
             } else if(result["status"] === "available") {
@@ -54,8 +54,8 @@ export class AppComponent {
             } else {
               this.errored.push(result["domain"]);
             }
-          })
-        })
+          }));
+        });
       },
       errors => {
         console.log('errors in synyonyms subscription: ', errors);
@@ -64,15 +64,19 @@ export class AppComponent {
   }
 
   clearSearch() {
+    this.stopSearch();
     this.searchStarted = false;
     this.registered = [];
     this.available = [];
     this.errored = [];
+    this.searchProgress = 0;
   }
 
   stopSearch() {
     console.log('values in stopSearch');
-
+    this.requests.map(request => {
+      request.unsubscribe();
+    });
   }
 
 }
