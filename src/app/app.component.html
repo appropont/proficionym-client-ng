@@ -1,3 +1,8 @@
-<h1>
-  {{title}}
-</h1>
+<div class="application">
+  <md-toolbar>
+    <h1>{{title}}</h1>
+  </md-toolbar>
+
+  <app-search-form (onSearch)="startSearch($event)" (onClear)="clearSearch()"></app-search-form>
+  <app-search-results [registered]="registered" [available]="available" [errored]="errored"></app-search-results>
+</div>

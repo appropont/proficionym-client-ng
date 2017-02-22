@@ -1,0 +1,24 @@
+<md-card>
+  <form name="search-form" class="md-inline-form">
+    <div
+        fxLayout="row" 
+        fxLayout.xs="column">
+      <md-input-container class="flex-item" fxFlex>
+        <label>Prefix</label>
+        <input md-input name="prefix" [(ngModel)]="prefix" />
+      </md-input-container>
+      <md-input-container class="flex-item" fxFlex>
+        <label>Word</label>
+        <input md-input name="word" [(ngModel)]="word" />
+      </md-input-container>
+      <md-input-container class="flex-item" fxFlex>
+        <label>Suffix</label>
+        <input md-input name="suffix" [(ngModel)]="suffix" />
+      </md-input-container>
+    </div>
+    <div fxLayout="row">
+      <button md-button fxFlex (click)="clear()">Clear</button>
+      <button md-button fxFlex (click)="search(prefix, word, suffix)">Search</button>
+    </div>
+  </form>
+</md-card>
