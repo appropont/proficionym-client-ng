@@ -1,13 +1,17 @@
-<div class="application">
-  <md-toolbar>
-    <h1>{{title}}</h1>
-  </md-toolbar>
+<div class="application-wrapper">
+  <h1
+    id="logo"
+    class="application-title"
+    [ngClass]="{'searched': searchStarted}">{{title}}</h1>
+  <div class="application" [ngClass]="{'searched': searchStarted}">
 
-  <app-search-form (onSearch)="startSearch($event)" (onClear)="clearSearch()"></app-search-form>
-  <md-progress-bar
-      class="main-progress-bar"
-      [mode]="determinate"
-      [value]="searchProgress">
-  </md-progress-bar>
-  <app-search-results [registered]="registered" [available]="available" [errored]="errored"></app-search-results>
+    <app-search-form (onSearch)="startSearch($event)" (onClear)="clearSearch()"></app-search-form>
+    <md-progress-bar
+        class="main-progress-bar"
+        [mode]="determinate"
+        [value]="searchProgress"
+        *ngIf="searchStarted">
+    </md-progress-bar>
+    <app-search-results *ngIf="searchStarted" [registered]="registered" [available]="available" [errored]="errored"></app-search-results>
+  </div>
 </div>

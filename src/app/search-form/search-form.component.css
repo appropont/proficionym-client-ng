@@ -1,0 +1,12 @@
+.input-wrapper {
+  display: block;
+  margin: 0 1rem;
+}
+
+.input-wrapper:first-child {
+  margin-left: 0;
+}
+
+.input-wrapper:last-child {
+  margin-right: 0;
+}

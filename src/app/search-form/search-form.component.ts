@@ -16,9 +16,12 @@ export class SearchFormComponent implements OnInit {
   word = '';
   suffix = '';
 
+  searchStarted = false;
+
   search(prefix, word, suffix) {
     console.log('firing search inside component', prefix, word, suffix);
     console.log('firing search inside component this:', this.prefix, this.word, this.suffix);
+    this.searchStarted = true;
     this.onSearch.emit({
       prefix,
       word,
@@ -27,6 +30,7 @@ export class SearchFormComponent implements OnInit {
   }
 
   clear() {
+    this.searchStarted = false;
     this.prefix = '';
     this.word = '';
     this.suffix = '';

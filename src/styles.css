@@ -1,11 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
-@import '~@angular/material/core/theming/prebuilt/deeppurple-amber.css';
+@import '~@angular/material/core/theming/prebuilt/indigo-pink.css';
 
 .md-tab-label {
   width: 33%;
-}
-
-.application {
-  max-width: 800px;
-  margin: 0 auto;
 }

@@ -1,0 +1,65 @@
+.application-wrapper {
+  background: url('./assets/images/bg.jpg');
+  background-size: cover;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  overflow: scroll;
+}
+
+.application-title {
+  text-align: center;
+}
+
+.application {
+  max-width: 800px;
+  margin: 0 auto;
+  position: relative;
+  top: 50px;
+  transition: all .3s;
+  transform: translateY(0);
+}
+
+
+.application.unsearched {
+  top: 10%;
+  transform: translateY(-10%);
+}
+
+
+#logo {
+  font-family: 'Open Sans', sans-serif;
+  color: #555;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 150px;
+  font-weight: 800;
+  letter-spacing: -3px;
+  line-height: 1;
+  text-shadow: #EDEDED 3px 2px 0;
+  position: relative;
+  transition: all .3s;
+}
+
+#logo.searched {
+  font-size: 48px;
+}
+
+#logo:after {
+  content:"proficionym";
+  position: absolute;
+  left: 8px;
+  top: 32px;
+}
+#logo:after {
+  /*background: url(http://subtlepatterns.com/patterns/crossed_stripes.png) repeat;*/
+  background-image: -webkit-linear-gradient(left top, transparent 0%, transparent 25%, #555 25%, #555 50%, transparent 50%, transparent 75%, #555 75%);
+  background-size: 4px 4px;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  z-index: -5;
+  display: block;
+  text-shadow: none;
+}
