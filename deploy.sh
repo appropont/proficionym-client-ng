@@ -2,7 +2,7 @@
 
 git checkout -b deploy
 
-ng build:production
+ng build -prod
 
 git add dist -f
 
