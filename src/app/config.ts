@@ -1,3 +1,3 @@
 export const config = {
-  apiDomain: "http://api.proficionym.dev:3000"
+  apiDomain: "http://proficionym-api-node.appropont.com"
 };
