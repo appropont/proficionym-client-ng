@@ -1,3 +1,12 @@
+@media(max-width: 600px) {
+
+  .search-results {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+}
+
 .search-results-label {
   width: 33%;
 }

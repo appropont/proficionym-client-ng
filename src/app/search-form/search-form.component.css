@@ -3,10 +3,12 @@
   margin: 0 1rem;
 }
 
-.input-wrapper:first-child {
-  margin-left: 0;
-}
+@media(min-width: 600px) {
+  .input-wrapper:first-child {
+    margin-left: 0;
+  }
 
-.input-wrapper:last-child {
-  margin-right: 0;
+  .input-wrapper:last-child {
+    margin-right: 0;
+  }
 }
