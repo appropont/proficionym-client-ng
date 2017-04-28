@@ -12,7 +12,7 @@ import { Observable } from 'rxjs/Rx';
 })
 export class AppComponent {
   title = 'Proficionym';
-  
+
   registered = [];
   available = [];
   errored = [];
@@ -28,12 +28,15 @@ export class AppComponent {
   startSearch(values) {
     this.stopSearch();
     let { prefix, word, suffix } = values;
+
     if(!prefix) {
       prefix = '';
     }
+
     if(!suffix) {
       suffix = '';
     }
+
     this.searchStarted = true;
     this.searchProgress = 0;
     this.available = [];
@@ -44,15 +47,17 @@ export class AppComponent {
         const synonymsCount = synonyms.length;
         let lookupsCompleted = 0;
         synonyms.map((synonym) => {
+
           this.requests.push(this.domainsService.lookup(`${prefix}${synonym}${suffix}.com`).subscribe(result => {
             lookupsCompleted += 1;
             this.searchProgress = Math.floor(lookupsCompleted / synonymsCount * 100);
-            if(result["status"] === "registered") {
-              this.registered.push(result["domain"]);
-            } else if(result["status"] === "available") {
-              this.available.push(result["domain"]);
+
+            if(result['status'] === 'registered') {
+              this.registered.push(result['domain']);
+            } else if(result['status'] === 'available') {
+              this.available.push(result['domain']);
             } else {
-              this.errored.push(result["domain"]);
+              this.errored.push(result['domain']);
             }
           }));
         });

@@ -8,7 +8,6 @@
     <app-search-form (onSearch)="startSearch($event)" (onClear)="clearSearch()"></app-search-form>
     <md-progress-bar
         class="main-progress-bar"
-        [mode]="determinate"
         [value]="searchProgress"
         *ngIf="searchStarted">
     </md-progress-bar>
