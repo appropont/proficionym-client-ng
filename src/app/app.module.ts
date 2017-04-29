@@ -12,15 +12,12 @@ import { SearchResultsComponent } from './search-results/search-results.componen
 
 import { DomainsService } from './domains.service';
 import { SynonymsService } from './synonyms.service';
-import { TestCustomObservableComponent } from './test-custom-observable/test-custom-observable.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     SearchFormComponent,
     SearchResultsComponent,
-    TestCustomObservableComponent,
-    TestCustomObservableComponent
   ],
   imports: [
     BrowserModule,
