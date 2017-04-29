@@ -14,6 +14,8 @@ export class SearchResultsComponent implements OnInit {
   @Input()
   errored = [];
 
+  searchStarted: false;
+
   constructor() { }
 
   ngOnInit() {

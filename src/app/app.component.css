@@ -1,5 +1,5 @@
 .application-wrapper {
-  background: url('./assets/images/bg.jpg');
+  background: url('../assets/images/bg.jpg');
   background-size: cover;
   position: absolute;
   top: 0;
