@@ -1,24 +1,24 @@
-<md-card>
-  <form name="search-form" class="md-inline-form">
+<mat-card>
+  <form name="search-form" class="mat-inline-form">
     <div
-        fxLayout="row" 
+        fxLayout="row"
         fxLayout.xs="column">
-      <md-input-container class="flex-item input-wrapper" fxFlex>
-        <label>Prefix</label>
-        <input mdInput name="prefix" [(ngModel)]="prefix" />
-      </md-input-container>
-      <md-input-container class="flex-item input-wrapper" fxFlex>
-        <label>Word</label>
-        <input mdInput name="word" [(ngModel)]="word" />
-      </md-input-container>
-      <md-input-container class="flex-item input-wrapper" fxFlex>
-        <label>Suffix</label>
-        <input mdInput name="suffix" [(ngModel)]="suffix" />
-      </md-input-container>
+      <mat-form-field class="flex-item input-wrapper" fxFlex>
+        <mat-label>Prefix</mat-label>
+        <input matInput name="prefix" [(ngModel)]="prefix" />
+      </mat-form-field>
+      <mat-form-field class="flex-item input-wrapper" fxFlex>
+        <mat-label>Word</mat-label>
+        <input matInput name="word" [(ngModel)]="word" />
+      </mat-form-field>
+      <mat-form-field class="flex-item input-wrapper" fxFlex>
+        <mat-label>Suffix</mat-label>
+        <input matInput name="suffix" [(ngModel)]="suffix" />
+      </mat-form-field>
     </div>
     <div fxLayout="row">
-      <button md-raised-button fxFlex (click)="clear()" *ngIf="searchStarted">Clear</button>
-      <button md-raised-button fxFlex (click)="search(prefix, word, suffix)">Search</button>
+      <button mat-raised-button fxFlex (click)="clear()" *ngIf="searchStarted">Clear</button>
+      <button mat-raised-button fxFlex (click)="search(prefix, word, suffix)">Search</button>
     </div>
   </form>
-</md-card>
+</mat-card>

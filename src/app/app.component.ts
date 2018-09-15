@@ -3,7 +3,7 @@ import { Component } from '@angular/core';
 import { SynonymsService } from './synonyms.service';
 import { DomainsService } from './domains.service';
 
-import { Observable } from 'rxjs/Rx';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-root',

@@ -1,43 +1,43 @@
-<md-card class="search-results">
-  <md-tab-group>
-    <md-tab>
-      <template md-tab-label class="search-results-label">
+<mat-card class="search-results">
+  <mat-tab-group>
+    <mat-tab>
+      <ng-template mat-tab-label class="search-results-label">
         Available: {{available.length}}
-      </template>
-      <md-list>
-        <md-list-item *ngFor="let domain of available">
+      </ng-template>
+      <mat-list>
+        <mat-list-item *ngFor="let domain of available">
           {{domain}}
-        </md-list-item>
-        <md-list-item *ngIf="!available.length && searchStarted">
+        </mat-list-item>
+        <mat-list-item *ngIf="!available.length && searchStarted">
           No Available domains. (Bummer.)
-        </md-list-item>
-      </md-list>
-    </md-tab>
-    <md-tab>
-      <template md-tab-label class="search-results-label">
+        </mat-list-item>
+      </mat-list>
+    </mat-tab>
+    <mat-tab>
+      <ng-template mat-tab-label class="search-results-label">
         Registered: {{registered.length}}
-      </template>
-      <md-list>
-        <md-list-item *ngFor="let domain of registered">
+      </ng-template>
+      <mat-list>
+        <mat-list-item *ngFor="let domain of registered">
           {{domain}}
-        </md-list-item>
-        <md-list-item *ngIf="!registered.length && searchStarted">
+        </mat-list-item>
+        <mat-list-item *ngIf="!registered.length && searchStarted">
           No Registered domains. (That is pretty rare.)
-        </md-list-item>
-      </md-list>
-    </md-tab>
-    <md-tab>
-      <template md-tab-label class="search-results-label">
+        </mat-list-item>
+      </mat-list>
+    </mat-tab>
+    <mat-tab>
+      <ng-template mat-tab-label class="search-results-label">
         Errors: {{errored.length}}
-      </template>
-      <md-list>
-        <md-list-item *ngFor="let domain of errored">
+      </ng-template>
+      <mat-list>
+        <mat-list-item *ngFor="let domain of errored">
           {{domain}}
-        </md-list-item>
-        <md-list-item *ngIf="!errored.length && searchStarted">
+        </mat-list-item>
+        <mat-list-item *ngIf="!errored.length && searchStarted">
           No Errored domains. (That is a good thing.)
-        </md-list-item>
-      </md-list>
-    </md-tab>
-  </md-tab-group>
-</md-card>
+        </mat-list-item>
+      </mat-list>
+    </mat-tab>
+  </mat-tab-group>
+</mat-card>
