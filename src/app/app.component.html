@@ -12,5 +12,29 @@
         *ngIf="searchStarted">
     </mat-progress-bar>
     <app-search-results *ngIf="searchStarted" [registered]="registered" [available]="available" [errored]="errored"></app-search-results>
+
+    <mat-card class="credits-card">
+      <div
+      class="credits"
+      fxLayout="row"
+      fxLayout.xs="column"
+      >
+        <div fxFlex>
+          <h4>API Credits</h4>
+          <p>This project is made possible thanks to some awesome third party APIs.</p>
+          <ul>
+            <li><a href="http://www.dictionaryapi.com">DictionaryApi.com</a></li>
+            <li><a href="http://wordnik.com">Wordnik</a></li>
+          </ul>
+        </div>
+        <div fxFlex>
+          <h4>Other Credits</h4>
+          <ul>
+            <li>Background Photo by <a href="https://unsplash.com/photos/ywqa9IZB-dU?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Romain Vignes</a> on <a href="https://unsplash.com">Unsplash</a></li>
+          </ul>
+        </div>
+      </div>
+    </mat-card>
+
   </div>
 </div>

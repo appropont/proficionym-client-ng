@@ -1,3 +1,8 @@
+a {
+  color: #333;
+  font-weight: 700
+}
+
 .application-wrapper {
   background: url('../assets/images/bg.jpg');
   background-size: cover;
@@ -68,4 +73,8 @@
   #logo {
     font-size: 60px;
   }
+}
+
+.credits-card {
+  margin-top: 10px;
 }
