@@ -11,7 +11,8 @@
     "test": "ng test",
     "pree2e": "webdriver-manager update --standalone false --gecko false",
     "e2e": "protractor",
-    "postng": "echo 'testing'"
+    "postng": "echo 'testing'",
+    "deploy": "npm run build && git add dist/ && git commit -m \"Latest Build\" && git push origin master && git push dokku master"
   },
   "private": true,
   "dependencies": {
