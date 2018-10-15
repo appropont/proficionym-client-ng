@@ -27,7 +27,7 @@ export class AppComponent {
 
   startSearch(values) {
     this.stopSearch();
-    let { prefix, word, suffix } = values;
+    let { prefix, word, suffix, tld } = values;
 
     if(!prefix) {
       prefix = '';
@@ -48,7 +48,7 @@ export class AppComponent {
         let lookupsCompleted = 0;
         synonyms.map((synonym) => {
 
-          this.requests.push(this.domainsService.lookup(`${prefix}${synonym}${suffix}.com`).subscribe(result => {
+          this.requests.push(this.domainsService.lookup(`${prefix}${synonym}${suffix}${tld}`).subscribe(result => {
             lookupsCompleted += 1;
             this.searchProgress = Math.floor(lookupsCompleted / synonymsCount * 100);
 

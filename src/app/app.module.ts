@@ -12,6 +12,8 @@ import {
   MatListModule,
   MatProgressBarModule,
   MatTabsModule,
+  MatSelectModule,
+  MatOptionModule,
 } from '@angular/material';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import 'hammerjs';
@@ -39,7 +41,9 @@ import { SynonymsService } from './synonyms.service';
     MatFormFieldModule,
     MatInputModule,
     MatListModule,
+    MatOptionModule,
     MatProgressBarModule,
+    MatSelectModule,
     MatTabsModule,
     FlexLayoutModule,
     BrowserAnimationsModule

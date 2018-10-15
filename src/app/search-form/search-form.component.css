@@ -1,6 +1,10 @@
 .input-wrapper {
   display: block;
-  margin: 0 1rem;
+  margin: 0;
+}
+
+.input-wrapper ::ng-deep .mat-form-field-infix {
+  width: auto;
 }
 
 @media(min-width: 600px) {

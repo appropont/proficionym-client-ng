@@ -15,17 +15,27 @@ export class SearchFormComponent implements OnInit {
   prefix = '';
   word = '';
   suffix = '';
+  tld = '';
+
+  tlds = [
+    '.com',
+    '.io',
+    '.me',
+    '.net',
+    '.org',
+  ];
 
   searchStarted = false;
 
-  search(prefix, word, suffix) {
+  search(prefix, word, suffix, tld) {
     console.log('firing search inside component', prefix, word, suffix);
     console.log('firing search inside component this:', this.prefix, this.word, this.suffix);
     this.searchStarted = true;
     this.onSearch.emit({
       prefix,
       word,
-      suffix
+      suffix,
+      tld,
     });
   }
 

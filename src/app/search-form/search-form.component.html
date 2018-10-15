@@ -1,8 +1,10 @@
 <mat-card>
   <form name="search-form" class="mat-inline-form">
     <div
-        fxLayout="row"
-        fxLayout.xs="column">
+      fxLayout="row"
+      fxLayout.xs="column"
+      fxLayoutGap="10px"
+    >
       <mat-form-field class="flex-item input-wrapper" fxFlex>
         <mat-label>Prefix</mat-label>
         <input matInput name="prefix" [(ngModel)]="prefix" />
@@ -14,6 +16,13 @@
       <mat-form-field class="flex-item input-wrapper" fxFlex>
         <mat-label>Suffix</mat-label>
         <input matInput name="suffix" [(ngModel)]="suffix" />
+      </mat-form-field>
+      <mat-form-field class="flex-item input-wrapper" fxFlex>
+        <mat-select placeholder="TLD" [(value)]="tld">
+          <mat-option *ngFor="let tldOption of tlds" [value]="tldOption">
+            {{tldOption}}
+          </mat-option>
+        </mat-select>
       </mat-form-field>
     </div>
     <div fxLayout="row">
@@ -27,7 +36,7 @@
       <button
         mat-raised-button
         fxFlex
-        (click)="search(prefix, word, suffix)"
+        (click)="search(prefix, word, suffix, tld)"
         type="submit"
       >Search</button>
     </div>
