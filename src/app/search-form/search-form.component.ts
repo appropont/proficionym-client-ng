@@ -15,7 +15,7 @@ export class SearchFormComponent implements OnInit {
   prefix = '';
   word = '';
   suffix = '';
-  tld = '';
+  tld = '.com';
 
   tlds = [
     '.com',
